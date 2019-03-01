@@ -7,3 +7,5 @@ RUN apk add --no-cache \
 # Actual image without curl
 FROM docker:latest
 COPY --from=0 /tmp/docker-compose /usr/local/bin/docker-compose
+RUN chown 1000:1000 /usr/local/bin/docker-compose
+RUN chmod 0775 /usr/local/bin/docker-compose
